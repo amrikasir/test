@@ -9,4 +9,8 @@ class barang extends Model
     protected $fillable = [
         'kode', 'lokasi', 'satuan', 'stok'
     ];
+
+    protected $casts = [
+        'stok'  => 'int'
+    ];
 }

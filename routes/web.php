@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Index;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Index::class, 'listPermintaan'])->name('home');
+
+Route::get('/permintaan/baru', [Index::class, 'permintaanBaru'])->name('new.request');
+Route::post('/permintaan/baru', [Index::class, 'prossesPermintaan'])->name('post.permintaan');
+
+Route::get('/list/barang', [Index::class, 'apiBarang'])->name('api.barang');
+
+Route::get('/fetch/barang/{id?}', [Index::class, 'fetchBarang'])->name('fetch.barang');
+
+Route::get('/fetch/peminta', [Index::class, 'fetchPeminta'])->name('fetch.peminta');

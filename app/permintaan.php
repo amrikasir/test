@@ -15,6 +15,6 @@ class permintaan extends Model
     }
 
     public function detail(){
-        return $this->hasOne(barang_permintaan::class, 'id', 'id_permintaan');
+        return $this->hasMany(barang_permintaan::class, 'id_permintaan', 'id');
     }
 }
