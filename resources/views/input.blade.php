@@ -112,6 +112,7 @@
                                             <tr>
                                                 <th class="">No.</th>
                                                 <th class="">Barang</th>
+                                                <th class="">Nama Barang</th>
                                                 <th class="">Lokasi</th>
                                                 <th class="">stok</th>
                                                 <th class="">Qty</th>
@@ -123,8 +124,8 @@
                                             <template id="temporary" x-for="(item, index) in items" :key="index">
                                                 <tr>
                                                     <td class="" x-text="index + 1">no.</td>
-                                                    <td x-text="item.kode"> nama barang
-                                                    </td>
+                                                    <td x-text="item.kode"> nama barang</td>
+                                                    <td x-text="item.nama_barang">Nama Barang</td>
                                                     <input type="hidden" name="barang[]" x-model="item.id" required>
                                                     <td x-text="item.lokasi">lokasi</td>
                                                     <td class="center aligned" x-text="item.stok">0</td>
@@ -140,12 +141,16 @@
                                                         <input type="text" value="-" name="ket[]">
                                                     </td>
                                                     <td class="center aligned">
+                                                        <template x-if="item.stok == 0">
+                                                            <span><i class="icon checkmark"></i> Kosong</span>
+                                                        </template>
+
                                                         <template x-if="item.qty <= item.stok">
                                                             <span><i class="icon checkmark"></i> Terpenuhi</span>
                                                         </template>
 
                                                         <template x-if="item.qty > item.stok">
-                                                            <span><i class="icon delete"></i> Tidak Mencukupi</span>
+                                                            <span><i class="icon delete"></i> Sebagian</span>
                                                         </template>
                                                     </td>
                                                 </tr>
