@@ -13,4 +13,8 @@ class barang extends Model
     protected $casts = [
         'stok'  => 'int'
     ];
+
+    public function getKodeAttribute(){
+        return $this->attributes['kode'] . ' - ' . $this->attributes['nama_barang'];
+    }
 }

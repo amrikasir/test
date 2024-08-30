@@ -26,10 +26,20 @@
                         <h6 class="text-blueGray-700 text-xl font-bold">
                             Daftar Permintaan Barang
                         </h6>
-                        <a href="{{ route('new.request') }}" class="ui mini green labeled icon button">
-                            <i class="plus square icon"></i>
-                            New
-                        </a>
+                        <div>
+                            <a href="{{ route('list.peminta') }}" class="ui mini blue labeled icon button">
+                                <i class="user icon"></i>
+                                Daftar Member
+                            </a>
+                            <a href="{{ route('list.barang') }}" class="ui mini brown labeled icon button">
+                                <i class="dolly flatbed icon"></i>
+                                Daftar Barang
+                            </a>
+                            <a href="{{ route('new.request') }}" class="ui mini green labeled icon button">
+                                <i class="plus square icon"></i>
+                                Permintaan Baru
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="flex-auto px-4 lg:px-10 py-10 pt-0">

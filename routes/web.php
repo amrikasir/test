@@ -21,6 +21,9 @@ Route::post('/permintaan/baru', [Index::class, 'prossesPermintaan'])->name('post
 
 Route::get('/list/barang', [Index::class, 'apiBarang'])->name('api.barang');
 
+Route::get('/daftar/barang', [Index::class, 'ListBarang'])->name('list.barang');
+Route::get('/daftar/peminta', [Index::class, 'ListPeminta'])->name('list.peminta');
+
 Route::get('/fetch/barang/{id?}', [Index::class, 'fetchBarang'])->name('fetch.barang');
 
 Route::get('/fetch/peminta', [Index::class, 'fetchPeminta'])->name('fetch.peminta');
